@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:wght@300&display=swap">
   <title>V+V Code Challenge - Contained Clickables</title>
 </head>
+<style>
+  /* Center content, text transform uppercase */
+  body {
+    background-color: #7a86cb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* Button styling */
+  button {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #00000000;
+    color: #E6E7F2;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px #00000080;
+    width: 150px;
+    border-radius: 50px;
+    padding: 1em;
+    margin: 0px 20px 20px 0px;
+    display: inline-block;
+  }
+
+  /* Down State button styles - text color adjusts original 5 letters*/
+  button:focus {
+    background-color: #383E5E;
+    color: #6849E3;
+    outline: none;
+  }
+
+  /* Down State hover button styles */
+  button:focus:hover {
+    background-color: #383E5E;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Button hover styles */
+  button:hover {
+    /* background-color: #383E5E; */
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Adding letters 'ed' to change text content on click */
+  button:focus:after,
+  button:active:after {
+    content: 'ed!';
+    color: #6849E3;
+  }
+</style>
+
 <body>
   <button href="#">Click</button>
   <button href="#">Click</button>
@@ -31,4 +92,5 @@
     Barlow (Google Font)
   -->
 </body>
+
 </html>

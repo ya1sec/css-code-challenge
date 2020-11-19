@@ -1,16 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css3?family=Merriweather:wght@300&display=swap">
   <title>V+V Code Challenge - Headline</title>
 </head>
+<style>
+  /* Center content, text + bg styling */
+  body {
+    background-color: #7a86cb;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 3em;
+    top: 25%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  /* Headline styling */
+  h1 {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    color: #6849e3;
+    transition: all 200ms ease-in;
+    text-decoration: none;
+  }
+
+  h1:before,
+  h1:after {
+    display: block;
+    width: 100%;
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    height: 0px;
+  }
+
+  /* Top line */
+  h1:before {
+    border-top: 1px solid #6849e3;
+    left: -100%;
+    top: 0;
+    height: 0px;
+  }
+
+  /* Bottom line */
+  h1:after {
+    border-bottom: 1px solid #6849e3;
+    left: 100%;
+    bottom: 0;
+    height: 0px;
+  }
+
+  @-webkit-keyframes left-up {
+    0% {
+      left: 100%;
+      height: 0;
+    }
+
+    50% {
+      left: 0;
+      height: 0;
+    }
+
+    100% {
+      height: 100%;
+      left: 0;
+    }
+  }
+
+  @-webkit-keyframes right-dn {
+    0% {
+      left: -100%;
+      height: 0;
+    }
+
+    50% {
+      left: 0;
+      height: 0;
+    }
+
+    100% {
+      height: 100%;
+      left: 0;
+    }
+  }
+
+  /* Hover states - colors, spacing, animation */
+  h1:hover {
+    color: #E6E7F2;
+    letter-spacing: -2px;
+  }
+
+  h1:hover:after,
+  h1:hover:before {
+    -webkit-animation-duration: 900ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards
+  }
+
+  h1:hover:after {
+    -webkit-animation-name: left-up;
+  }
+
+  h1:hover:before {
+    -webkit-animation-name: right-dn;
+  }
+</style>
+
 <body>
   <div class="text-wrapper">
     <h1>
       INTERNET
     </h1>
-  </div>  
+  </div>
   <!--
   PALETTE: 
     Background: #7a86cb
@@ -19,4 +132,5 @@
     Merriweather (Google Font)
   -->
 </body>
+
 </html>

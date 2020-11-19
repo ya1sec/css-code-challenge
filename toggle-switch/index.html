@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V+V Code Challenge - Toggle Switch</title>
 </head>
+<style>
+  /* Center content */
+  body {
+    background-color: #7a86cb;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Hide default checkbox */
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  /* Off state toggle container */
+  label {
+    cursor: pointer;
+    width: 100px;
+    height: 49px;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px #00000080;
+    border: 0.25px solid rgba(0, 0, 0, 0.35);
+    position: relative;
+  }
+
+  /* Off State circle */
+  label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 45px;
+    border: 0.25px solid rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+  }
+
+  /* On State toggle container */
+  input:checked+label {
+    background: rgba(230, 231, 242, 0.15);
+    border: 0.25px solid #4c537e;
+
+  }
+
+  /* On State circle */
+  input:checked+label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+    background-color: #E6E7F2;
+    border: 0.25px solid #E6E7F2;
+  }
+
+  /* Transition State: stretched circle */
+  label:active:after {
+    width: 65px;
+  }
+</style>
+
 <body>
   <input id="toggle" name="toggle" type="checkbox">
-    <label for="toggle">
+  <label for="toggle">
   </label>
   <!--
-  PALETTE: 
+  PALETTE:
     Background: #7a86cb
-  
+
   Off State:
     Background color: rgba(0, 0, 0, 0.5)
     Border color: rgba(0, 0, 0, 0.35)
@@ -25,4 +92,5 @@
     Circle border color: #E6E7F2
   -->
 </body>
+
 </html>
